@@ -1,0 +1,19 @@
+<%- include("partials/header"); -%>
+
+<form action="/auth/signup" method="POST" class="form">
+    <h2>Sign up</h2>
+    <label for="email">Email</label>
+    <input type="text" name="email" required>
+    <div class="email error">
+        <p> <%= emails %> </p>
+    </div>
+    <label for="password"></label>
+    <input type="password" name="password" required>
+    <div class="password error">
+        <p> <%= passwords %> </p>
+    </div>
+    <button>Sign up</button>
+</form>
+<!-- <script src="/controllers/authController.js" defer></script> -->
+
+<%- include("partials/footer"); -%>

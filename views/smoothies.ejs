@@ -1,0 +1,51 @@
+<%- include('partials/header2'); -%>
+
+
+<form class="password-input">
+  <input type="text" name="email" class="email" placeholder="Email">
+  <input type="password" name="password" class="password" placeholder="Password">
+  <input type="submit" value="submit" class="button">
+  <!-- <button class="pbutton">ADD</button> -->
+</form>
+<ul class="recipes">
+  <li class="recipe">
+    <img src="/smoothie.png" alt="smoothie recipe icon">
+    <h4>Banana Boost</h4>
+    <p>Banana, Vanilla ice cream, Milk</p>
+  </li>
+  <li class="recipe">
+    <img src="/smoothie.png" alt="smoothie recipe icon">
+    <h4>Tropical Twist</h4>
+    <p>Peach, Pinapple, Apple juice</p>
+  </li>
+  <li class="recipe">
+    <img src="/smoothie.png" alt="smoothie recipe icon">
+    <h4>Protein Packer</h4>
+    <p>Oats, Peanut butter, Milk, Banana, Blueberries</p>
+  </li>
+  <li class="recipe">
+    <img src="/smoothie.png" alt="smoothie recipe icon">
+    <h4>Banana Boost</h4>
+    <p>Banana, Vanilla ice cream, Milk</p>
+  </li>
+  <li class="recipe">
+    <img src="/smoothie.png" alt="smoothie recipe icon">
+    <h4>Tropical Twist</h4>
+    <p>Peach, Pinapple, Apple juice</p>
+  </li>
+  <li class="recipe">
+    <img src="/smoothie.png" alt="smoothie recipe icon">
+    <h4>Protein Packer</h4>
+    <p>Oats, Peanut butter, Milk, Banana, Blueberries</p>
+  </li>
+</ul>
+
+<script>
+  const form = document.querySelector(".password-input");
+
+  form.addEventListener('submit', (e) => {
+    console.log(e);
+  })
+</script>
+
+<%- include('partials/footer'); -%>

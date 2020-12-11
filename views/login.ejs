@@ -1,0 +1,21 @@
+<%- include("partials/header"); -%>
+
+<form action="/auth/login" method="POST">
+    <div class="email error">
+        <p> <%= message %> </p>
+    </div>
+    <h2>Login</h2>
+    <label for="email">Email</label>
+    <input type="text" name="email" required>
+    <div class="email error">
+        <p> <%= email %> </p>
+    </div>
+    <label for="password"></label>
+    <input type="password" name="password" required>
+    <div class="email error">
+        <p> <%= password %> </p>
+    </div>
+    <button>Login</button>
+</form>
+
+<%- include("partials/footer"); -%>
