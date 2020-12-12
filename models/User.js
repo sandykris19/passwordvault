@@ -17,17 +17,11 @@ const userSchema = mongoose.Schema({
   },
   passwords: [
     {
-      email: String,
-      password: String,
+      email: { type: String, default: "example@mail.com" },
+      password: { type: String, default: "password" },
     },
   ],
 });
-
-//fire a function after a document is saved
-// userSchema.post("save", (doc, next) => {
-//   console.log("new user was created & saved", doc);
-//   next();
-// });
 
 userSchema.pre("save", async function (next) {
   const salt = await bcrypt.genSalt();

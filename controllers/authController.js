@@ -48,7 +48,11 @@ module.exports.signup_post = async (req, res) => {
     const token = createToken(user._id);
     res.cookie("jwt", token, { httpOnly: true, maxAge: maxAge * 1000 });
     console.log(`user : ${user._id}`);
-    res.render("login", { message: "Registration Success, Please login" });
+    res.render("login", {
+      message: "Registration Success, Please login",
+      email: null,
+      password: null,
+    });
   } catch (err) {
     const errors = handleErrors(err);
     res.render("signup", { emails: errors.email, passwords: errors.password });
