@@ -28,7 +28,7 @@ mongoose
     useCreateIndex: true,
   })
   .then((result) =>
-    app.listen(3000, () => {
+    app.listen(3000 || process.env.PORT, () => {
       console.log("Listening at port 3000 & Connected to DB");
     })
   )
