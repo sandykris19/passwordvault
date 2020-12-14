@@ -27,12 +27,9 @@ mongoose
     useUnifiedTopology: true,
     useCreateIndex: true,
   })
-  .then((result) =>
-    app.listen(3000 || process.env.PORT, () => {
-      console.log("Listening at port 3000 & Connected to DB");
-    })
-  )
-  .catch((err) => console.log(err));
+  .then((result) => {
+    console.log("Listening at port 3000 & Connected to DB");
+  });
 
 // routes
 app.get("/", (req, res) => res.render("home"));
@@ -69,15 +66,21 @@ app.post("/vaults/add", requireAuth, async (req, res) => {
   });
 });
 
-app.post("/delete/:id", requireAuth, async (req , res) => {
+app.post("/delete/:id", requireAuth, async (req, res) => {
   let pes = await User.findByIdAndUpdate(
-    {_id: res.locals.user.id},
-    {$pull: {
-      passwords: { _id: req.params.id },
-    },},
-  )
+    { _id: res.locals.user.id },
+    {
+      $pull: {
+        passwords: { _id: req.params.id },
+      },
+    }
+  );
   pes = await User.findById({ _id: res.locals.user.id });
   res.render("vaults", {
     pcard: { id: pes._id, password: pes.passwords },
   });
+});
+
+app.listen(process.env.PORT || 3000, () => {
+  console.log("Listening..");
 });
