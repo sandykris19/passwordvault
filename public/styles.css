@@ -82,6 +82,12 @@ button{
   padding: 10px 16px;
   letter-spacing: 2px;
 }
+.del-button{
+  width: fit-content;
+  position: relative;
+  bottom: 7.9rem;
+  left: 8rem;
+}
 .error{
   color: #ff0099;
   margin: 10px 2px;
@@ -114,7 +120,7 @@ header .btn{
   display: inline-block;
   font-size: 0.8em;
 }
-.recipes{
+.cards{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 30px;
@@ -122,7 +128,7 @@ header .btn{
   margin: 80PX AUTO;
   max-width: 1200px;
 }
-.recipe{
+.card{
   display: inline-block;
   border-radius: 20px;
   background: white;
@@ -130,7 +136,7 @@ header .btn{
   text-align: center;
   padding: 0 20px 30px 20px
 }
-.recipe img{
+.card img{
   width: 110px;
   margin: -30px auto 20px;
 }
@@ -139,7 +145,7 @@ header .btn{
   display: flex;
   width: 900px;
   margin: auto;
-  padding: 30px;
+  padding: 20px;
   box-shadow: 1px 2px 3px rgba(0,0,0,0.1);
   border-radius: 10px;
   justify-content: space-around;
@@ -170,3 +176,20 @@ footer{
   margin-top: 120px;
   color: #aaa;
 }
+
+.icon{
+  position: absolute;
+  left: 2rem;
+  top: 1rem;
+}
+
+.hide{
+  display: none;
+}
+.unhidepassword{
+  display: none;
+}
+.visible{
+  display: block;
+}
+

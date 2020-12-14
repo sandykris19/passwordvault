@@ -11,6 +11,7 @@ const requireAuth = (req, res, next) => {
         res.redirect("/auth/login");
       } else {
         console.log(decodedToken);
+        res.locals.user = decodedToken;
         next();
       }
     });
@@ -20,7 +21,5 @@ const requireAuth = (req, res, next) => {
 };
 
 //auth middleware
-
-
 
 module.exports = requireAuth;
